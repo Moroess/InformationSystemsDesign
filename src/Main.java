@@ -3,19 +3,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // --- формируем variants ---
+        // --- С„РѕСЂРјРёСЂСѓРµРј variants ---
         double[][] variants;
-        System.out.println("Источник данных:");
-        System.out.println("1 — TestData.VARIANT_2");
-        System.out.println("2 — ручной ввод");
-        System.out.print("Ваш выбор: ");
+        System.out.println("РСЃС‚РѕС‡РЅРёРє РґР°РЅРЅС‹С…:");
+        System.out.println("1 вЂ” TestData.VARIANT_2");
+        System.out.println("2 вЂ” СЂСѓС‡РЅРѕР№ РІРІРѕРґ");
+        System.out.print("Р’Р°С€ РІС‹Р±РѕСЂ: ");
         int choice = Integer.parseInt(sc.nextLine().trim());
         if (choice == 1) {
             variants = new double[][] {
                     TestData.VARIANT_2
             };
         } else if (choice == 2) {
-            System.out.println("Введите интервалы X_i через запятую:");
+            System.out.println("Р’РІРµРґРёС‚Рµ РёРЅС‚РµСЂРІР°Р»С‹ X_i С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ:");
             String line = sc.nextLine().trim();
             String[] parts = line.split(",");
             double[] x = new double[parts.length];
@@ -24,12 +24,12 @@ public class Main {
             }
             variants = new double[][] { x };
         } else {
-            System.out.println("Нет такого пункта.");
+            System.out.println("РќРµС‚ С‚Р°РєРѕРіРѕ РїСѓРЅРєС‚Р°.");
             return;
         }
-        // --- дальше ваш прежний код ---
+        // --- РґР°Р»СЊС€Рµ РІР°С€ РїСЂРµР¶РЅРёР№ РєРѕРґ ---
         if (args.length > 0) {
-            runVariant("Вариант 2", variants[0]);
+            runVariant("Р’Р°СЂРёР°РЅС‚ 2", variants[0]);
             return;
         }
         for (int i = 0; i < variants.length; i++) {
